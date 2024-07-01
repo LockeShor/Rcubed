@@ -6,8 +6,10 @@ R<sup>3</sup> is a project designed to accelerate the tuning process for the FTC
 
 ## Installation
 
-Clone the project and ensure you have installed the numpy and scipy pip modules
-run the fit.py file using python
+- Clone the project
+- Ensure you have installed the numpy and scipy pip modules
+- Add your own data to `data.csv`, or use the sample provided
+- Run the `fit.py` file using python
 
 ## Credits
 
