@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.optimize import curve_fit
+from scipy.optimize import curve_fit, minimize
 
 data = open('data.csv', 'r').read().splitlines()[1:]
 
@@ -33,3 +33,13 @@ print("Final Equation: z = {0}abs(x-{1}) + {2}abs(y-{3}) + {4}".format(popt[0], 
 # print(infodict)
 # print(mesg)
 # print(ier)
+
+def fitted(x):
+    return popt[0]*abs(x[0]-popt[1]) + popt[2]*abs(x[1]-popt[3]) + popt[4]
+
+min_optimized = minimize(fitted, [0,0], method="Nelder-Mead") #bounds=[(-1, 1), (-1, 1)])
+
+min_input_vector = min_optimized.x
+min_output = fitted(min_input_vector)
+
+print("Minimum Point: {0} at {1}".format(min_output, min_input_vector))
