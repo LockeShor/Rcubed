@@ -53,3 +53,5 @@ min_input_vector = min_optimized.x
 min_output = fitted(min_input_vector)
 
 print("Minimum Point: {0} at {1}".format(min_output, min_input_vector))
+
+print("\n-------------------\nBest Fit for Roadrunner:\nKv = {0}\nKa = {1}\nKs = {2}\nError = {3}".format(min_input_vector[0], min_input_vector[1], "Not Implemented", min_output))
