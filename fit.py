@@ -11,7 +11,7 @@ for line in data:
     Kv.append(float(values[0]))
     Ka.append(float(values[1]))
     Ks.append(float(values[2]))
-    Error.append(float(values[3]))
+    Error.append(abs(float(values[3])))
 
 #prepare each row into the inputs and outputs of the function to fit
 inputs = [
@@ -25,13 +25,13 @@ outputs = Error
 varnames = ['a', 'm', 'h', 'n', 'j', 'k', 'o', 'p']
 # 
 # a: overall steepness, around 810 (may be redundant with n2 & m2)
-# m: steepness in x direction, around 0.4
-# h: center of x direction, around 0.016
-# n: steepness in y direction, around 1.13
-# j: center of y direction, around 0.002
-# k: center of z direction, around 0.195
-# o: steepness in w direction, around 1
-# p: center of w direction, around 0.001
+# m: steepness in Kv direction, around 0.4
+# h: center of Kv direction, around 0.016
+# n: steepness in Ka direction, around 1.13
+# j: center of Ka direction, around 0.002
+# k: center of Output/Error direction, around 0.195
+# o: steepness in Ks direction, around 1
+# p: center of Ks direction, around 0.001
 
 #function to fit (maybe put abs around it because error can be negative?)
 def f(x, a, m, h, n, j, k, o, p):
